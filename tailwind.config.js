@@ -1,15 +1,13 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        'crunchyroll-orange': '#f47521',
+        'crunchyroll-dark': '#1a1a1a',
+        'crunchyroll-light': '#f8f8f8',
       },
     },
   },
