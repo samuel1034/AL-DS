@@ -1,24 +1,12 @@
-export default function Hero() {
-    return (
-      <section className="bg-[url('/path-to-hero-image.jpg')] bg-cover bg-center h-[500px] relative">
-        <div className="absolute inset-0 bg-crunchyroll-dark opacity-75"></div>
-        <div className="relative z-10 container mx-auto h-full flex flex-col justify-center items-start px-6">
-          <h1 className="text-4xl font-bold text-crunchyroll-light">
-            Watch the Latest Anime with Dual Subtitles
-          </h1>
-          <p className="text-xl mt-4 text-crunchyroll-light max-w-md">
-            Enjoy Japanese and English subtitles simultaneously. Perfect for learning and entertainment.
-          </p>
-          <div className="mt-6">
-            <button className="bg-crunchyroll-orange text-crunchyroll-light font-bold py-2 px-4 rounded-lg hover:bg-orange-600 transition">
-              Start Watching
-            </button>
-            <button className="ml-4 border-2 border-crunchyroll-orange text-crunchyroll-light font-bold py-2 px-4 rounded-lg hover:bg-orange-600 transition">
-              Explore More
-            </button>
-          </div>
-        </div>
-      </section>
-    );
-  }
-  
+export default function HeroSection() {
+  return (
+    <section className="relative h-[400px] bg-cover bg-center" style={{ backgroundImage: `url('/path-to-hero-image.jpg')` }}>
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="relative z-10 flex flex-col justify-center items-center text-center h-full">
+        <h1 className="text-4xl font-bold text-white">Watch Anime with Dual Subtitles</h1>
+        <p className="text-crunchyOrange text-lg mt-4">Learn Japanese while enjoying your favorite anime.</p>
+        <button className="mt-6 px-4 py-2 bg-crunchyOrange text-white font-semibold rounded">Get Started</button>
+      </div>
+    </section>
+  );
+}
