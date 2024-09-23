@@ -1,9 +1,10 @@
-import Hero from '../components/Hero';
-
+import HeroSection from '../components/HeroSection';
+import NavMenu from '../components/NavMenu';
 export default function Home() {
   return (
     <main>
-      <Hero />
+      <NavMenu />
+      <HeroSection />
       <div className="container mx-auto">
         {/* Additional homepage content */}
       </div>

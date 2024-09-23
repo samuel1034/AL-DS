@@ -1,16 +1,18 @@
-import Link from 'next/link';
+import React from 'react';
 
-export default function AnimeCard({ anime }) {
+export default function AnimeCard({ title, image }) {
   return (
-    <Link href={`/anime/${anime.id}`}>
-      <a className="block">
-        <div className="relative h-60 w-full bg-gray-800">
-          <img src={anime.image} alt={anime.title} className="object-cover h-full w-full" />
-          <div className="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center opacity-0 hover:opacity-100 transition">
-            <span className="text-white font-bold">{anime.title}</span>
-          </div>
-        </div>
-      </a>
-    </Link>
+    <div className="relative h-[400px]">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${image})` }}
+      ></div>
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="relative z-10 flex flex-col justify-center items-center text-center h-full">
+        <h1 className="text-4xl font-bold text-white">{title}</h1>
+        <p className="text-crunchyOrange text-lg mt-4">Learn Japanese while enjoying your favorite anime.</p>
+        <button className="mt-6 px-4 py-2 bg-crunchyOrange text-white font-semibold rounded">Get Started</button>
+      </div>
+    </div>
   );
 }

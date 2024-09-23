@@ -1,5 +1,5 @@
 import NavMenu from './NavMenu';
-import Hero from './Hero';
+import Hero from './HeroSection';
 
 export default function Layout({ children }) {
   return (
