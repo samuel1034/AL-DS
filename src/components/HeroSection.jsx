@@ -9,14 +9,39 @@ export default function HeroSection() {
 
   useEffect(() => {
     const fetchAnimeData = async () => {
+      const query = `
+        query {
+          Page(page: 1, perPage: 5) {
+            media(type: ANIME, sort: POPULARITY_DESC) {
+              title {
+                english
+                romaji
+              }
+              description
+              bannerImage
+            }
+          }
+        }
+      `;
+
       try {
-        const response = await fetch('https://api.jikan.moe/v4/top/anime?type=ona');
-        const data = await response.json();
-        const formattedAnimeList = data.data.map(anime => ({
-          title: anime.title,
-          image: anime.images.jpg.large_image_url,
-          description: anime.synopsis
-        })).filter(anime => anime.image);
+        const response = await fetch('https://graphql.anilist.co', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify({ query }),
+        });
+
+        const { data } = await response.json();
+        const formattedAnimeList = data.Page.media
+          .filter(anime => anime.bannerImage)
+          .map(anime => ({
+            title: anime.title.english || anime.title.romaji,
+            image: anime.bannerImage,
+            description: anime.description
+          }));
         setAnimeList(formattedAnimeList);
       } catch (error) {
         console.error('Error fetching anime data:', error);
@@ -44,25 +69,27 @@ export default function HeroSection() {
       {animeList.length > 0 ? (
         <Slider {...settings}>
           {animeList.map((anime, index) => (
-            <div key={index} className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url(${anime.image})` }}>
-              <div className="absolute inset-0 flex">
-                <div className="w-1/2 bg-black bg-opacity-70 flex flex-col justify-center items-start px-6 md:px-12">
-                  <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
-                    {anime.title}
-                  </h1>
-                  <p className="text-sm md:text-base text-white mb-6 max-w-xl">
-                    {anime.description ? anime.description.slice(0, 150) + '...' : 'Explore the world of anime and manga!'}
-                  </p>
-                  <div className="flex space-x-4">
-                    <button className="px-6 py-2 bg-crunchyOrange text-white text-sm font-bold rounded-full hover:bg-orange-600 transition-colors duration-300">
-                      Watch Now
-                    </button>
-                    <button className="px-6 py-2 bg-transparent border border-white text-white text-sm font-bold rounded-full hover:bg-white hover:text-black transition-colors duration-300">
-                      Add to Watchlist
-                    </button>
-                  </div>
+            <div key={index} className="relative h-screen">
+              <div 
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${anime.image})` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-center items-start px-8 md:px-16 max-w-6xl mx-auto">
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 shadow-text">
+                  {anime.title}
+                </h1>
+                <p className="text-lg md:text-xl text-white mb-6 shadow-text max-w-2xl">
+                  {anime.description ? anime.description.replace(/<[^>]*>?/gm, '').slice(0, 150) + '...' : 'Explore the world of anime!'}
+                </p>
+                <div className="flex space-x-4">
+                  <button className="px-8 py-3 bg-crunchyOrange text-white text-lg font-bold rounded-full hover:bg-orange-600 transition-colors duration-300">
+                    Watch Now
+                  </button>
+                  <button className="px-8 py-3 bg-transparent border-2 border-white text-white text-lg font-bold rounded-full hover:bg-white hover:text-black transition-colors duration-300">
+                    Add to Watchlist
+                  </button>
                 </div>
-                <div className="w-1/2"></div>
               </div>
             </div>
           ))}
