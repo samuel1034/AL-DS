@@ -103,14 +103,34 @@ export default function HeroSection() {
           <p className="text-sm md:text-base text-white mb-6 shadow-text max-w-xl">
             Immerse yourself in anime while mastering Japanese! Our unique platform offers dual subtitles in Japanese, English, and Spanish, allowing you to enjoy your favorite shows while improving your language skills.
           </p>
-          <ul className="text-sm md:text-base text-white mb-6 shadow-text max-w-xl list-disc list-inside">
-            <li>Dual subtitles: Japanese + English/Spanish</li>
-            <li>Interactive language learning tools</li>
-            <li>Extensive anime library</li>
-            <li>Customizable learning experience</li>
+          <ul className="text-sm md:text-base text-white mb-6 shadow-text max-w-xl space-y-2">
+            <li className="flex items-center">
+              <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+              </svg>
+              Dual subtitles: Japanese + English/Spanish
+            </li>
+            <li className="flex items-center">
+              <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+              Interactive language learning tools
+            </li>
+            <li className="flex items-center">
+              <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+              Extensive anime library
+            </li>
+            <li className="flex items-center">
+              <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
+              Customizable learning experience
+            </li>
           </ul>
           <div className="flex space-x-4">
-            <button className="px-6 py-2 bg-crunchyOrange text-white text-sm font-bold rounded-full hover:bg-orange-600 transition-colors duration-300">
+            <button className="px-6 py-2 bg-animelingoPurple text-white text-sm font-bold rounded-full hover:bg-purple-800 transition-colors duration-300">
               Start Learning
             </button>
             <button className="px-6 py-2 bg-transparent border-2 border-white text-white text-sm font-bold rounded-full hover:bg-white hover:text-black transition-colors duration-300">
