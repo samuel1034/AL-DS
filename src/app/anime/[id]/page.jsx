@@ -53,17 +53,17 @@ export default function AnimeDetail({ params }) {
           <p className="mb-6">{anime.synopsis}</p>
           <h2 className="text-2xl font-semibold mb-4">Watch Trailer</h2>
           {anime.youtubeVideoId ? (
-            <div className="aspect-w-16 aspect-h-9 mb-6">
+            <div className="w-full aspect-w-16 aspect-h-9 mb-8">
               <iframe
                 src={`https://www.youtube.com/embed/${anime.youtubeVideoId}`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                className="w-full h-full"
+                className="w-full h-full rounded-lg shadow-lg"
               ></iframe>
             </div>
           ) : (
-            <p>No trailer available</p>
+            <p className="mb-8">No trailer available</p>
           )}
           <h2 className="text-2xl font-semibold mb-4">Watch Full Episodes</h2>
           <p className="mb-4">To watch full episodes, please visit one of these official sources:</p>
