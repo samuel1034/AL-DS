@@ -69,13 +69,15 @@ export default function AnimeDetail({ params }) {
           <p className="mb-4">To watch full episodes, please visit one of these official sources:</p>
           <div className="flex space-x-4">
             <Link href={`https://www.crunchyroll.com/search?q=${encodeURIComponent(anime.title)}`} target="_blank" rel="noopener noreferrer">
-              <button className="bg-crunchyroll-orange text-white px-4 py-2 rounded hover:bg-orange-600 transition-colors">
+              <button className="bg-crunchyroll-orange text-white px-4 py-2 rounded hover:bg-orange-600 transition-colors flex items-center">
+                <img src="/crunchyroll-logo.png" alt="Crunchyroll" className="w-6 h-6 mr-2" />
                 Watch on Crunchyroll
               </button>
-            </Link>
-            <Link href={`https://animelon.com/search?q=${encodeURIComponent(anime.title)}`} target="_blank" rel="noopener noreferrer">
-              <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">
-                Watch on Animelon
+            </Link>            
+            <Link href={`https://9animetv.to/search?keyword=${encodeURIComponent(anime.title)}`} target="_blank" rel="noopener noreferrer">
+              <button className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-colors flex items-center">
+                <img src="/9anime-logo.jpg" alt="9anime" className="w-6 h-6 mr-2" />
+                Watch on 9anime
               </button>
             </Link>
           </div>
