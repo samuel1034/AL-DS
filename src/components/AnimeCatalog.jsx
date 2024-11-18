@@ -42,7 +42,7 @@ const AnimeCatalog = () => {
   if (error) return <div className="text-center text-red-500 text-xl mt-12">{error}</div>;
 
   return (
-    <div className="bg-gray-900 text-white p-6 font-sans">
+    <div id='anime-catalog' className="bg-gray-900 text-white p-6 font-sans">
       <h1 className="text-3xl font-bold text-center mb-8">Anime Catalog</h1>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {animeList.map((anime) => (

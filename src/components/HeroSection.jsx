@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Link from 'next/link';
 
 export default function HeroSection() {
   const [animeList, setAnimeList] = useState([]);
@@ -130,12 +131,17 @@ export default function HeroSection() {
             </li>
           </ul>
           <div className="flex space-x-4">
-            <button className="px-6 py-2 bg-animelingoPurple text-white text-sm font-bold rounded-full hover:bg-purple-800 transition-colors duration-300">
-              Start Learning
-            </button>
-            <button className="px-6 py-2 bg-transparent border-2 border-white text-white text-sm font-bold rounded-full hover:bg-white hover:text-black transition-colors duration-300">
-              Explore Anime
-            </button>
+          <Link href="#anime-catalog">
+          <button className="px-6 py-2 bg-animelingoPurple text-white text-sm font-bold rounded-full hover:bg-purple-800 transition-colors duration-300">
+            Start Learning
+          </button>
+        </Link>
+        <Link href="#anime-catalog">
+          <button className="px-6 py-2 bg-transparent border-2 border-white text-white text-sm font-bold rounded-full hover:bg-white hover:text-black transition-colors duration-300">
+            Explore Anime
+          </button>
+        </Link>
+
           </div>
         </div>
         

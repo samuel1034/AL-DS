@@ -1,8 +1,9 @@
 import React from 'react';
+import Link from 'next/link';
 
 const About = () => {
   return (
-    <section className="bg-gradient-to-b from-black to-gray-900 py-20 text-white overflow-hidden">
+    <section id='about' className="bg-gradient-to-b from-black to-gray-900 py-20 text-white overflow-hidden">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-animelingoPurple">
           Discover AnimeLingo
@@ -61,9 +62,12 @@ const About = () => {
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
             Embark on your Japanese learning adventure today and become part of our thriving community of anime enthusiasts and language learners. With AnimeLingo, every watch becomes a lesson, and every lesson brings you closer to fluency.
           </p>
+          <Link href="#anime-catalog">
           <button className="px-8 py-3 bg-animelingoPurple text-white font-bold rounded-full hover:bg-purple-700 transition-colors duration-300 shadow-lg">
             Start Your Journey
           </button>
+          </Link>
+
         </div>
       </div>
     </section>
