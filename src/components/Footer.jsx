@@ -25,6 +25,12 @@ export default function Footer() {
 
         {/* Footer Text */}
         <p className="text-crunchyroll-light">&copy; 2024 AnimeLingo. All rights reserved.</p>
+
+        {/* Contributor Info */}
+        <div className="flex items-center justify-center space-x-3 mt-2">
+          <p>Proudly brought to you by Samuel Fuentes</p>
+          <Image src="/Samuel.jpg" alt="Samuel Fuentes" width={64} height={64} className="rounded-full" />
+        </div>
       </div>
     </footer>
   );
