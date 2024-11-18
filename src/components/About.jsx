@@ -21,7 +21,14 @@ const About = () => {
           <div className="bg-gray-800 bg-opacity-50 p-8 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm">
             <h3 className="text-2xl font-semibold text-animelingoPurple mb-4">Why Choose AnimeLingo?</h3>
             <ul className="space-y-2 text-gray-300">
-              {[...].map((feature, index) => (
+              {[
+                "Learn with your favorite anime series",
+                "Dual subtitles in Japanese, English, and Spanish",
+                "Interactive vocabulary and grammar exercises",
+                "Personalized learning paths",
+                "Community of anime and Japanese language enthusiasts",
+                "Regular updates with new anime content"
+              ].map((feature, index) => (
                 <li key={index} className="flex items-center">
                   <svg className="w-5 h-5 mr-2 text-animelingoPurple" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
