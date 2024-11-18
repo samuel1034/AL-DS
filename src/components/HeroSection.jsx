@@ -101,7 +101,7 @@ export default function HeroSection() {
             />
           </div>
           <p className="text-sm md:text-base text-white mb-6 shadow-text max-w-xl">
-            Immerse yourself in anime while mastering Japanese! Our unique platform offers dual subtitles in Japanese, English, and Spanish, allowing you to enjoy your favorite shows while improving your language skills.
+          Discover an extensive collection of anime trailers while enhancing your Japanese skills! With dual subtitles in Japanese, English, and Spanish, our platform makes watching trailers both entertaining and educational.
           </p>
           <ul className="text-sm md:text-base text-white mb-6 shadow-text max-w-xl space-y-2">
             <li className="flex items-center">
